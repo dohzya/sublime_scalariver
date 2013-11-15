@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tools",
+        "caption": "Tools",
+        "children":
+        [
+            {
+                "id": "format",
+                "caption": "Format with Scalariver",
+                "command": "scalariver"
+            }
+        ]
+    }
+]
