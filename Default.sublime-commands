@@ -1,6 +1,10 @@
 [
     {
-        "caption": "Format with Scalariver",
+        "caption": "Scalariver: Format",
         "command": "scalariver"
+    },
+    {
+        "caption": "Scalariver: Format file",
+        "command": "scalariver_file"
     }
 ]

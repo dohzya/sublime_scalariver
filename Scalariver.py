@@ -56,9 +56,21 @@ class Scalariver(sublime_plugin.TextCommand):
         # We start one thread per selection so we don't lock up the interface
         # while waiting for the response from the API
         for sel in sels:
-            original = view.substr(sel)
-            formated = self.format(original)
-            view.replace(edit, sel, formated)
+            ScalariverFormat(view, edit).format(sel)
+
+
+class ScalariverFile(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        sel = sublime.Region(0, self.view.size())
+        ScalariverFormat(self.view, edit).format(sel)
+
+
+class ScalariverFormat:
+
+    def __init__(self, view, edit):
+        self.view = view
+        self.edit = edit
 
     def get_config(self, original):
         settings = self.view.settings()
@@ -67,7 +79,12 @@ class Scalariver(sublime_plugin.TextCommand):
         config.update({"source": original})
         return (url, config)
 
-    def format(self, original):
+    def format(self, region):
+        original = self.view.substr(region)
+        formated = self.call_scalariver(original)
+        self.view.replace(self.edit, region, formated)
+
+    def call_scalariver(self, original):
         try:
             (url, data) = self.get_config(original)
             params = urlencode(data).encode('utf-8')
@@ -79,3 +96,14 @@ class Scalariver(sublime_plugin.TextCommand):
             sublime.status_message('Error connecting to "%s"' % url)
             return original
 
+
+class ScalariverListener(sublime_plugin.EventListener):
+    '''This listener allow to format on save
+    '''
+
+    def __init__(self):
+        super(ScalariverListener, self).__init__()
+
+    def on_post_save(self, view):
+        if view.settings().get("scalariver_formatonsave"):
+            view.window().run_command('scalariver_file')

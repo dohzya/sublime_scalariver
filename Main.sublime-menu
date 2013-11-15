@@ -6,8 +6,17 @@
         [
             {
                 "id": "format",
-                "caption": "Format with Scalariver",
-                "command": "scalariver"
+                "caption": "Scalariver",
+                "children": [
+                    {
+                        "caption": "Format",
+                        "command": "scalariver"
+                    },
+                    {
+                        "caption": "Format file",
+                        "command": "scalariver_file"
+                    }
+                ]
             }
         ]
     }

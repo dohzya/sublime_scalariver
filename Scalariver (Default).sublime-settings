@@ -1,5 +1,6 @@
 {
   "scalariver_url": "http://river.scalex.org",
+  "scalariver_formatonsave": true,
   "scalariver_options": {
 
     // Scalariver's options
