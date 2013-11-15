@@ -1,7 +1,7 @@
 # Sublime Scalariver
 
-Format Scala code using [Scalariver](https://github.com/ornicar/scalariver),
-a web server using [Scalariform](https://github.com/mdr/scalariform).
+Format Scala code using [Scalariver](http://river.scalex.org),
+a web server using [Scalariform](http://mdr.github.io/scalariform).
 
 ## Getting started
 
@@ -14,7 +14,7 @@ a web server using [Scalariform](https://github.com/mdr/scalariform).
 
 ## How it works
 
-The (selected) code is sent to [Scalariver](https://github.com/ornicar/scalariver) with formatting option,
+The (selected) code is sent to [Scalariver](http://river.scalex.org) with formatting option,
 so you might consider to run a personal Scalariver instance on your computer (or in an intranet server).
 
 ## Commands
@@ -26,11 +26,11 @@ so you might consider to run a personal Scalariver instance on your computer (or
 
 ### Using Package Control
 
-Install the “Scalariver” package. (hem… when it'll be ready)
+Install the “Scalariver” package.
 
 ### À la pogne
 
-Fetch the sources on [GitHub](https://github.com/dohzya/sublime_scalariver).
+Fetch the sources on [GitHub](https://github.com/dohzya/sublime_scalariver) and put them into your Packages directory.
 
 ## Settings
 
@@ -45,6 +45,6 @@ in your Key Bindings file.
 
 ## Credits
 
-Thanks to
-- [Scalariver](https://github.com/ornicar/scalariver) ☺
-- [Scalariform](https://github.com/mdr/scalariform)
+- Plugin by [dohzya](https://github.com/dohzya),
+- heavilly based on [Scalariver](http://river.scalex.org),
+- which runs [Scalariform](http://mdr.github.io/scalariform)
