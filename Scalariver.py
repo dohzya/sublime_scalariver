@@ -9,7 +9,8 @@ try:
     from urllib.parse import urlencode
     from urllib.error import URLError
 except ImportError:
-    from urllib2 import urlopen, urlencode, Request, URLError
+    from urllib import urlencode
+    from urllib2 import urlopen, Request, URLError
 
 
 class Scalariver(sublime_plugin.TextCommand):
