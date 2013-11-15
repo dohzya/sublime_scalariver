@@ -2,6 +2,15 @@ import sublime
 import sublime_plugin
 from os.path import basename
 
+# Attempt to load urllib.request/error and fallback to urllib2 (Python 2/3 compat)
+try:
+    from urllib.request import urlopen
+    from urllib.request import Request
+    from urllib.parse import urlencode
+    from urllib.error import URLError
+except ImportError:
+    from urllib2 import urlopen, urlencode, Request, URLError
+
 
 class Scalariver(sublime_plugin.TextCommand):
 
@@ -51,6 +60,22 @@ class Scalariver(sublime_plugin.TextCommand):
             formated = self.format(original)
             view.replace(edit, sel, formated)
 
-    def format(self, string):
-        return string
+    def get_config(self, original):
+        settings = self.view.settings()
+        url = settings.get("scalariver_url") or "http://river.scalex.org"
+        config = settings.get("scalariver_options") or {}
+        config.update({"source": original})
+        return (url, config)
+
+    def format(self, original):
+        try:
+            (url, data) = self.get_config(original)
+            params = urlencode(data).encode('utf-8')
+            request = Request(url, params, headers={"User-Agent": "Sublime Scalariver"})
+            http_file = urlopen(request, timeout=5)
+            return http_file.read().decode('utf-8')
+        except URLError as err:
+            # Otherwise, if there was a connection error, let it be known
+            sublime.status_message('Error connecting to "%s"' % url)
+            return original
 

@@ -1,0 +1,96 @@
+{
+  "scalariver_url": "http://river.scalex.org",
+  "scalariver_options": {
+
+    // Scalariver's options
+
+    // scala version of the source code.
+    //"scalaVersion": "2.10",
+
+    // indent level to add to every line.
+    //"initialIndentLevel": 0,
+
+    // print the source unchanged if it cannot be parsed correctly.
+    //"forceOutput": false,
+
+
+    // Scalariform's options
+
+
+    // Align class/function parameters in the same column.
+    //"alignParameters": false,
+
+    // Align the arrows of consecutive single-line case statements.
+    //"alignSingleLineCaseStatements": false,
+
+    // When alignSingleLineCaseStatements is true, this is a limit on the
+    // number of spaces that can be inserted before an arrow to align it with
+    // other case statements. This can be used to avoid very large gaps.
+    //"alignSingleLineCaseStatements.maxArrowIndent": 40,
+
+    // When compactControlReadability is true, if/else and try/catch/finally
+    // control structures will be formatted using Compact Control Readability
+    // style.
+    //"compactControlReadability": false,
+
+    // Omit spaces when formatting a '+' operator on String literals.
+    //"compactStringConcatenation": false,
+
+    // With this set to true, class (and trait / object) declarations will be
+    // formatted as recommended by the Scala Style Guide. That is, if the
+    // declaration section spans multiple lines, it will be formatted so that
+    // either the parameter section or the inheritance section is doubly
+    // indented. This provides a visual distinction from the members of the
+    // class.
+    //"doubleIndentClassDeclaration": false,
+
+    // Format embedded XML literals; if false they will be left untouched.
+    //"formatXml": true,
+
+    // Whether to indent package blocks.
+    //"indentPackageBlocks": true,
+
+    // The number of spaces to use for each level of indentation.
+    // This option is ignored if indentWithTabs is true.
+    //"indentSpaces": 2,
+
+    // Use a tab for each level of indentation. When set to true, this ignores
+    // any setting given for indentSpaces. In addition, for the moment,
+    // alignSingleLineCaseStatements and alignParameters options are not
+    // supported when indenting with tabs, and XML indentation is handled
+    // differently.
+    //"indentWithTabs": false,
+
+    // If true, start a multi-line Scaladoc comment body on same line as the
+    // opening comment delimiter.
+    //"multilineScaladocCommentsStartOnFirstLine": false,
+
+    // If true, it will keep a newline before a close parenthesis ')' in an
+    // argument expression.
+    //"preserveDanglingCloseParenthesis": false,
+
+    // If true, Scaladoc asterisks will be placed beneath the second asterisk.
+    //"placeScaladocAsterisksBeneathSecondAsterisk": false,
+
+    // If true, the formatter will keep an existing space before a parenthesis
+    // argument.
+    //"preserveSpaceBeforeArguments": false,
+
+    // Replace arrow tokens with their unicode equivalents: => with ⇒,
+    // and <- with ←.
+    //"rewriteArrowSymbols": false,
+
+    // Whether to ensure a space before colon.
+    //"spaceBeforeColon": false,
+
+    // Whether to use a space inside type brackets.
+    //"spaceInsideBrackets": false,
+
+    // Whether to use a space inside non-empty parentheses.
+    //"spaceInsideParentheses": false,
+
+    // Whether to add a space around the @ token in pattern binders.
+    //"spacesWithinPatternBinders": true
+
+  }
+}
